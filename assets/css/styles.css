@@ -1,0 +1,526 @@
+/* Paleta Rústica:
+   Beige cálido: #F5E6D8
+   Marrón tierra: #8B6F47
+   Terracota: #C97D60
+   Verde musgo: #6B7F5A
+   Crema: #FAF5F0
+   Marrón oscuro: #5C4A37
+*/
+
+body {
+    margin: 0;
+    font-family: 'Cormorant Garamond', serif;
+    background: #FAF5F0; /* crema cálido */
+    background-image: 
+        radial-gradient(circle at 2px 2px, rgba(139, 111, 71, 0.03) 1px, transparent 0);
+    background-size: 40px 40px;
+    color: #5C4A37; /* marrón oscuro */
+    line-height: 1.7;
+    font-size: 1.1rem;
+}
+
+p {
+    font-size: 1.15rem;
+    color: #5C4A37;
+    margin: 15px 0;
+}
+
+/* Hero con foto preboda */
+.hero {
+    position: relative;
+    text-align: center;
+    color: white;
+    height: 65vh;
+    overflow: hidden;
+}
+
+.hero-img {
+    width: 100%;
+    height: 120%;
+    object-fit: contain;
+    object-position: center center;
+    filter: brightness(55%);
+    transform: translateY(0);
+    transition: transform 0.1s ease-out;
+    will-change: transform;
+}
+
+.hero-text {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.hero-text .hero-subtitle {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 3.0rem;
+    font-weight: 400;
+    margin: 0;
+    color: #FFFFFF;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+    letter-spacing: 3px;
+    width: 90%;
+    text-align: center;
+}
+
+.hero-text h1 {
+    position: absolute;
+    top: 33%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: 'Dancing Script', cursive;
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin: 0;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+    letter-spacing: 2px;
+    width: 90%;
+    text-align: center;
+}
+
+.hero-text p {
+    position: absolute;
+    top: calc(28% + 70px);
+    left: 50%;
+    transform: translate(-50%, 0);
+    margin: 0;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.6rem;
+    letter-spacing: 4px;
+    font-weight: 300;
+    color: #FFFFFF;
+    text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.5);
+    width: 90%;
+    text-align: center;
+}
+
+/* Secciones */
+.info, .maps, .rsvp, .allergies, .schedule {
+    padding: 0px 30px;
+    max-width: 900px;
+    margin: 0px auto;
+    text-align: center;
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.maps {
+    margin-top: 0;
+    padding-top: 20px;
+}
+
+.info {
+    margin-top: 20px;
+}
+
+/* Cuenta atrás */
+.countdown {
+    padding: 30px 30px;
+    max-width: 900px;
+    margin: 20px auto;
+    text-align: center;
+    position: relative;
+    background: linear-gradient(135deg, #F5E6D8 0%, #FAF5F0 100%);
+    border-radius: 20px;
+    box-shadow: 0 8px 25px rgba(92, 74, 55, 0.15);
+    border: 2px solid rgba(139, 111, 71, 0.2);
+}
+
+/* Sección de cuenta atrás fuera del hero */
+.countdown-section {
+    padding: 0px 0px;
+    max-width: 900px;
+    margin: 0px auto;
+    text-align: center;
+    position: relative;
+}
+
+
+.countdown-container {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    flex-wrap: wrap;
+    margin-top: 40px;
+}
+
+.countdown-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #FFFFFF;
+    padding: 25px 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(92, 74, 55, 0.15);
+    border: 2px solid rgba(139, 111, 71, 0.2);
+    min-width: 120px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.countdown-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(92, 74, 55, 0.25);
+}
+
+.countdown-number {
+    font-family: 'Playfair Display', serif;
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: #8B6F47;
+    line-height: 1;
+    margin-bottom: 10px;
+    text-shadow: 1px 1px 3px rgba(139, 111, 71, 0.2);
+}
+
+.countdown-label {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.2rem;
+    color: #6B7F5A;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+@media (max-width: 768px) {
+    .hero-text .hero-subtitle {
+        font-size: 3.0rem;
+        letter-spacing: 2px;
+    }
+    
+    .hero-text h1 {
+        font-size: 2.5rem;
+    }
+    
+    .hero-text p {
+        font-size: 1.2rem;
+        letter-spacing: 2px;
+    }
+    
+    .countdown-container {
+        gap: 8px;
+        flex-wrap: nowrap;
+        margin-top: 20px;
+    }
+    
+    .countdown-item {
+        min-width: 0;
+        flex: 1;
+        padding: 12px 8px;
+    }
+    
+    .countdown-number {
+        font-size: 1.8rem;
+        margin-bottom: 5px;
+    }
+    
+    .countdown-label {
+        font-size: 0.7rem;
+    }
+    
+    .countdown-section {
+        padding: 0px 15px;
+    }
+    
+    .countdown {
+        padding: 30px 15px;
+    }
+    
+    .schedule-list {
+        gap: 0;
+        margin-top: 0px;
+    }
+    
+    .schedule-item {
+        padding: 15px 0;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+    
+    .schedule-time {
+        font-size: 1.5rem;
+        min-width: auto;
+    }
+    
+    .schedule-event {
+        font-size: 1.3rem;
+        text-align: left;
+    }
+}
+
+h2 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 2.8rem;
+    font-weight: 600;
+    color: #8B6F47; /* marrón tierra */
+    margin-bottom: 0px;
+    letter-spacing: 1px;
+    position: relative;
+    display: inline-block;
+}
+
+
+
+h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: #6B7F5A; /* verde musgo */
+    margin-top: 25px;
+    letter-spacing: 0.5px;
+}
+
+.details {
+    background: #F5E6D8; /* beige cálido - fallback */
+    background-image: url('../img/esquileo.jpeg'); /* Cambia esta ruta por tu imagen */
+    background-size: 100% auto;
+    background-position: center center;
+    background-repeat: no-repeat;
+    padding: 30px;
+    border-radius: 15px;
+    border: 2px solid rgba(139, 111, 71, 0.2);
+    box-shadow: 0 4px 15px rgba(92, 74, 55, 0.1);
+    margin-top: 30px;
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.details::after {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    border-radius: 15px;
+    background: linear-gradient(135deg, #C97D60, #6B7F5A);
+    z-index: -1;
+    opacity: 0.1;
+}
+
+.details h3,
+.details p {
+    position: relative;
+    z-index: 1;
+    color: #FFFFFF;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7), 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.details p {
+    margin: 8px 0;
+    font-size: 1.1rem;
+}
+
+/* Mapa */
+.map-container {
+    margin-top: 0px;
+    text-align: center;
+}
+
+.map-container .form-link {
+    padding: 12px 30px;
+    font-size: 1.0em;
+}
+
+/* Programación del día */
+.schedule-list {
+    margin-top: 0px;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.schedule-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 0;
+    position: relative;
+}
+
+.schedule-item:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 2px;
+    background: linear-gradient(to right, transparent, #C97D60, transparent);
+}
+
+.schedule-time {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #8B6F47;
+    min-width: 80px;
+    text-align: left;
+}
+
+.schedule-event {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #5C4A37;
+    text-align: right;
+    flex: 1;
+}
+
+/* Formulario */
+.rsvp iframe {
+    border-radius: 15px;
+    box-shadow: 0 6px 20px rgba(92, 74, 55, 0.2);
+    border: 3px solid rgba(139, 111, 71, 0.3);
+    margin-top: 20px;
+}
+
+.form-note {
+    font-style: italic;
+    color: #8B6F47;
+    margin-bottom: 20px;
+    font-size: 1rem;
+    padding: 15px;
+    background: rgba(245, 230, 216, 0.5);
+    border-radius: 10px;
+    border-left: 4px solid #C97D60;
+}
+
+.form-link {
+    display: inline-block;
+    margin-top: 30px;
+    padding: 18px 40px;
+    background: #8B6F47 0%;
+    color: #FFFFFF;
+    text-decoration: none;
+    border-radius: 12px;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.3rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    box-shadow: 0 4px 15px rgba(92, 74, 55, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    min-width: 200px;
+    text-align: center;
+}
+
+
+
+.form-link:active {
+    transform: translateY(-1px);
+}
+
+.whatsapp-link {
+    background: #25D366;
+    margin-top: 15px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.form-link:not(:first-of-type) {
+    margin-top: 15px;
+}
+
+
+
+.whatsapp-icon {
+    flex-shrink: 0;
+}
+
+.rsvp-image {
+    margin-top: 40px;
+    text-align: center;
+}
+
+.rsvp-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 0 6px 20px rgba(92, 74, 55, 0.2);
+}
+
+/* Sección de alergias */
+.allergies {
+    background: linear-gradient(135deg, #FAF5F0 0%, #F5E6D8 100%);
+    border-radius: 15px;
+    box-shadow: 0 6px 20px rgba(92, 74, 55, 0.15);
+    margin-top: 30px;
+    border: 2px solid rgba(139, 111, 71, 0.2);
+    position: relative;
+    overflow: hidden;
+}
+
+.allergies::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(to right, #C97D60, #6B7F5A, #C97D60);
+}
+
+.allergies p {
+    line-height: 1.9;
+    margin: 12px 0;
+    font-size: 1.05rem;
+    color: #5C4A37;
+}
+
+.allergies-note {
+    margin-top: 25px;
+    padding: 20px;
+    background: rgba(201, 125, 96, 0.1);
+    border-radius: 12px;
+    font-size: 1rem;
+    color: #5C4A37;
+    border: 1px dashed rgba(139, 111, 71, 0.3);
+    font-style: italic;
+}
+
+/* Footer */
+footer {
+    background: linear-gradient(135deg, #8B6F47 0%, #5C4A37 100%);
+    color: #FFFFFF;
+    padding: 40px 30px;
+    text-align: center;
+    margin-top: 60px;
+    font-size: 1.1rem;
+    position: relative;
+    border-top: 4px solid #C97D60;
+}
+
+footer::before {
+    content: '❋ ❋ ❋';
+    display: block;
+    font-size: 1.5rem;
+    color: rgba(255, 255, 255, 0.6);
+    margin-bottom: 15px;
+    letter-spacing: 15px;
+}
+
+footer p {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+    margin: 0;
+    color: #FFFFFF;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+    font-weight: 400;
+}
